@@ -55,7 +55,7 @@
     font-size: 10px;
     font-weight: 500;
     background: var(--surface2);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.2);
     color: var(--muted);
     padding: 3px 8px;
     border-radius: 20px;
@@ -79,8 +79,8 @@
 
   textarea {
     width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: var(--radius);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
@@ -93,7 +93,7 @@
   }
 
   textarea:focus { border-color: var(--green); }
-  textarea::placeholder { color: var(--muted); }
+  textarea::placeholder { color: #666; }
 
   .tenet-row {
     display: flex;
@@ -169,8 +169,8 @@
 
   .toggle-btn {
     flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 8px;
     color: var(--muted);
     font-family: 'DM Sans', sans-serif;
@@ -269,8 +269,8 @@
   }
 
   .persona-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: var(--radius);
     padding: 14px;
     margin-bottom: 10px;
@@ -374,7 +374,7 @@
   .reset-btn {
     width: 100%;
     background: transparent;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: var(--radius);
     color: var(--muted);
     font-family: 'DM Sans', sans-serif;
@@ -395,8 +395,8 @@
 
   .diff-btn {
     flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 8px;
     color: var(--muted);
     font-family: 'DM Sans', sans-serif;
@@ -669,7 +669,7 @@ Return ONLY a JSON array. No markdown, no preamble. Each object: { "name": "..."
 Verdicts must be 20-35 words. First person. Vivid. Opinionated. Reference the specific moment described. Each voice must be clearly distinct from the others.`;
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('/api/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
